@@ -1,0 +1,26 @@
+import type { Framework } from "./Framework"
+import type { NodePath } from "./NodePath"
+import type { WindowFramework } from "./WindowFramework"
+
+import { Nothing } from "Maybe"
+
+import Framework from "./Framework"
+import WindowFramework from "./WindowFramework"
+
+
+
+runIt :: Framework -> WindowFramework -> NodePath -> {}
+runIt = extern "runIt"
+
+main = () => {
+  framework = Framework.make()
+  window = pipe(
+    Framework.open,
+    Framework.setWindowTitle("MadPanda"),
+    Framework.openWindow,
+  )(framework)
+
+  scene = WindowFramework.loadModel(Nothing, ".buildlibs/panda3d-1.10.14/models/environment.egg", window)
+
+  runIt(framework, window, scene)
+}

@@ -1,0 +1,20 @@
+{
+  "name": "MadPanda3D",
+  "version": "0.0.1",
+  "main": "src/Main.mad",
+  "hooks": {
+    "postInstall": "./scripts/build-lib"
+  },
+  "staticLibs": [
+    "lib/lib/libp3framework.a",
+    "lib/lib/libpanda.a",
+    "lib/lib/libpandaegg.a",
+    "lib/lib/libpandagl.a",
+    "lib/lib/libpandafx.a",
+    "lib/lib/libpandaexpress.a",
+    "lib/lib/libp3dtoolconfig.a",
+    "lib/lib/libp3dtool.a",
+    "lib/lib/libp3direct.a",
+    "lib/build/libmadpanda.a"
+  ]
+}

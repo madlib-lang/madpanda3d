@@ -1,0 +1,19 @@
+import type { WindowFramework } from "./WindowFramework"
+
+
+
+type Framework = __Framework__
+export type Framework
+
+
+make :: {} -> Framework
+export make = extern "madpanda__framework__make"
+
+open :: Framework -> Framework
+export open = extern "madpanda__framework__open"
+
+setWindowTitle :: String -> Framework -> Framework
+export setWindowTitle = extern "madpanda__framework__setWindowTitle"
+
+openWindow :: Framework -> WindowFramework
+export openWindow = extern "madpanda__framework__openWindow"

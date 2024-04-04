@@ -1,0 +1,7 @@
+.buildlibs
+.vscode
+build
+environment.egg
+lib/include
+lib/lib
+lib/build

@@ -1,0 +1,11 @@
+import type { Maybe } from "Maybe"
+
+import type { NodePath } from "./NodePath"
+
+
+
+type WindowFramework = __WindowFramework__
+export type WindowFramework
+
+loadModel :: Maybe NodePath -> String -> WindowFramework -> NodePath
+export loadModel = extern "madpanda__windowframework__loadModel"

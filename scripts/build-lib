@@ -1,0 +1,20 @@
+#!/bin/sh
+mkdir -p .buildlibs
+mkdir -p lib/lib
+mkdir -p lib/include
+
+mkdir .buildlibs
+cd .buildlibs
+wget https://github.com/panda3d/panda3d/archive/refs/tags/v1.10.14.zip
+unzip v1.10.14.zip
+cd panda3d-1.10.14
+
+LDFLAGS="-framework IOKit -framework CoreVideo" python3 makepanda/makepanda.py --everything --static --no-python
+
+cp built/lib/*.a ../../lib/lib/
+cp -R built/include/* ../../lib/include/
+
+cd ../..
+
+# build libmadpanda.a
+make -C lib -j

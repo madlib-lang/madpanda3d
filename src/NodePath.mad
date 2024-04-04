@@ -1,0 +1,2 @@
+type NodePath = __NodePath__
+export type NodePath

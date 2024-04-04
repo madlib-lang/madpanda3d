@@ -1,0 +1,4 @@
+#!/bin/sh
+
+make -C lib -j
+LDFLAGS="-ObjC -framework AppKit -framework IOKit -framework OpenGL -framework Cocoa -framework CoreVideo -framework CoreServices -framework Carbon -lpng -lfreetype -L/opt/homebrew/lib" madlib run -t llvm src/Main.mad
